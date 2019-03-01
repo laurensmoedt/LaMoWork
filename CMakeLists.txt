@@ -65,11 +65,13 @@ add_library(LamoEngine
 	LamoEngine/renderer.cpp
 	LamoEngine/sprite.h
 	LamoEngine/sprite.cpp
+	LamoEngine/entity.h
+	LamoEngine/entity.cpp
 )
 
 # Demo
 add_executable(demo
-	demo/Main.cpp
+	demo/main.cpp
 )
 target_link_libraries(demo
 	LamoEngine

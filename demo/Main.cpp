@@ -7,6 +7,7 @@
 #include <LamoEngine/renderer.h>
 #include <LamoEngine/camera.h>
 #include <LamoEngine/sprite.h>
+#include <LamoEngine/entity.h>
 
 int main( void )
 {
