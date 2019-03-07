@@ -8,8 +8,30 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/euler_angles.hpp>
 
-void computeMatricesFromInputs(GLFWwindow* window);
-glm::mat4 getViewMatrix();
-glm::vec3 getCursor();
+
+class Camera 
+{
+public:
+	Camera();
+	virtual ~Camera();
+
+	void computeMatricesFromInputs(GLFWwindow* window);
+
+	glm::mat4 getViewMatrix() { return _viewMatrix; };
+	glm::vec3 getCursor() { return cursor; };
+
+private:
+	glm::mat4 _viewMatrix;
+
+	
+	glm::vec3 position;
+	glm::vec3 cursor;
+
+	// Right and Down vector
+	glm::vec3 _right;
+	glm::vec3 _up;
+
+	float speed;
+};
 
 #endif

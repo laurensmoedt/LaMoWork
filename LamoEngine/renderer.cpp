@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 
-#include <LamoEngine/camera.h>
+
 #include <LamoEngine/renderer.h>
 
 Renderer::Renderer(unsigned int w, unsigned int h)
@@ -76,7 +76,7 @@ int Renderer::init()
 
 void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot)
 {
-	glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
+	//glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
 
 	// Build the Model matrix
@@ -86,7 +86,7 @@ void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float 
 
 	modelMatrix = translationMatrix * rotationMatrix * scalingMatrix;
 
-	glm::mat4 MVP = _projectionMatrix * viewMatrix * modelMatrix;
+	glm::mat4 MVP = _projectionMatrix * _viewMatrix * modelMatrix;
 
 	// Send our transformation to the currently bound shader,
 	// in the "MVP" uniform
@@ -218,4 +218,16 @@ GLuint Renderer::loadShaders(const char* vertex_file_path, const char* fragment_
 	glDeleteShader(fragmentShaderID);
 
 	return programID;
+}
+
+void Renderer::renderScene(Scene* scene) 
+{
+	scene->camera()->computeMatricesFromInputs(window());
+	_viewMatrix = scene->camera()->getViewMatrix();
+
+}
+
+void Renderer::renderEntity(glm::mat4 modelMatrix, Entity* entity, Camera* camera) 
+{
+	
 }
