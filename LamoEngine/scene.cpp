@@ -2,13 +2,13 @@
 
 
 
-Scene::Scene()
+Scene::Scene() : Entity()
 {
 	_camera = new Camera();
 }
 
 
-Scene::~Scene()
+Scene::~Scene() 
 {
 
 }

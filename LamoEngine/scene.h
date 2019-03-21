@@ -5,11 +5,11 @@
 #include <LamoEngine/sprite.h>
 #include <LamoEngine/entity.h>
 
-class Scene
+class Scene : public Entity
 {
 public:
-	Scene();
-	~Scene();
+	Scene(); ///< @brief Scene Constructor
+	virtual ~Scene(); ///< @brief Scene Destructor
 
 	Camera* camera() { return _camera; };
 
@@ -19,4 +19,3 @@ private:
 };
 
 #endif /* SCENE_H */
-

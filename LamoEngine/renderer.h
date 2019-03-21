@@ -20,9 +20,8 @@ class Renderer
 		virtual ~Renderer();
 
 		void renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot);
-		void renderEntity(glm::mat4 modelMatrix, Entity* entity, Camera* camera);
-		void renderScene(Scene* sc);
-
+		void renderScene(Scene* scene);
+		void renderEntity(Entity* entity);
 		GLFWwindow* window() { return _window; };
 
 		unsigned int width() { return _window_width; };
@@ -39,6 +38,8 @@ class Renderer
 			const char* vertex_file_path,
 			const char* fragment_file_path
 		);
+
+		
 
 		GLuint _programID;
 

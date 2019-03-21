@@ -74,15 +74,40 @@ int Renderer::init()
 	return 0;
 }
 
+void Renderer::renderScene(Scene* scene)
+{
+	scene->camera()->computeMatricesFromInputs(window());
+	_viewMatrix = scene->camera()->getViewMatrix();
+
+	for (int i = 0; i < scene->getChildren().size(); i++)
+	{
+		renderEntity(scene->getChildren()[i]);
+	}
+}
+
+void Renderer::renderEntity(Entity* entity)
+{
+	if (entity->sprite() != nullptr)
+	{
+		this->renderSprite(entity->sprite(), entity->position.x, entity->position.y, entity->scale.x, entity->scale.y, entity->rotation);
+	}
+	
+	for (int i = 0; i < entity->getChildren().size(); i++)
+	{
+		renderEntity(entity->getChildren()[i]);
+	}
+
+}
+
 void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float sy, float rot)
 {
-	//glm::mat4 viewMatrix  = getViewMatrix(); // get from Camera (Camera position and direction)
+	
 	glm::mat4 modelMatrix = glm::mat4(1.0f);
 
 	// Build the Model matrix
 	glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(px, py, 0.0f));
 	glm::mat4 rotationMatrix	= glm::eulerAngleYXZ(0.0f, 0.0f, rot);
-	glm::mat4 scalingMatrix	 = glm::scale(glm::mat4(1.0f), glm::vec3(sx, sy, 1.0f));
+	glm::mat4 scalingMatrix		= glm::scale(glm::mat4(1.0f), glm::vec3(sx, sy, 1.0f));
 
 	modelMatrix = translationMatrix * rotationMatrix * scalingMatrix;
 
@@ -91,7 +116,7 @@ void Renderer::renderSprite(Sprite* sprite, float px, float py, float sx, float 
 	// Send our transformation to the currently bound shader,
 	// in the "MVP" uniform
 	GLuint matrixID = glGetUniformLocation(_programID, "MVP");
-	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &MVP[0][0]);
+	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &MVP[0][0]); 
 
 	// Bind our texture in Texture Unit 0
 	glActiveTexture(GL_TEXTURE0);
@@ -220,14 +245,4 @@ GLuint Renderer::loadShaders(const char* vertex_file_path, const char* fragment_
 	return programID;
 }
 
-void Renderer::renderScene(Scene* scene) 
-{
-	scene->camera()->computeMatricesFromInputs(window());
-	_viewMatrix = scene->camera()->getViewMatrix();
 
-}
-
-void Renderer::renderEntity(glm::mat4 modelMatrix, Entity* entity, Camera* camera) 
-{
-	
-}

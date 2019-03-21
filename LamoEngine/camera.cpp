@@ -1,11 +1,11 @@
 /*
- * Camera class - LamoEngine 2D OpenGL framework.
+ * LamoEngine 2D OpenGL framework.
  *
  */
 
 #include <LamoEngine/camera.h>
 
-Camera:: Camera()
+Camera:: Camera() : Entity()
 {
 	cursor = glm::vec3(0, 0, 0);
 	position = glm::vec3(0, 0, 5);
@@ -14,14 +14,11 @@ Camera:: Camera()
 	_up = glm::vec3(0, -1, 0);
 
 	speed = 300.0f; // 300 units / second
-};
+}
 Camera:: ~Camera()
 {
 
-};
-
-
-
+}
 
 void Camera::computeMatricesFromInputs(GLFWwindow* window)
 {

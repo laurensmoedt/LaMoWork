@@ -8,12 +8,14 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/euler_angles.hpp>
 
+#include <LamoEngine/sprite.h>
+#include <LamoEngine/entity.h>
 
-class Camera 
+class Camera : public Entity
 {
 public:
-	Camera();
-	virtual ~Camera();
+	Camera(); ///< @brief Camera Constructor
+	virtual ~Camera(); ///< @brief Camera Destructor
 
 	void computeMatricesFromInputs(GLFWwindow* window);
 
@@ -23,11 +25,11 @@ public:
 private:
 	glm::mat4 _viewMatrix;
 
-	
+
 	glm::vec3 position;
 	glm::vec3 cursor;
 
-	// Right and Down vector
+	// Right and up vector
 	glm::vec3 _right;
 	glm::vec3 _up;
 
