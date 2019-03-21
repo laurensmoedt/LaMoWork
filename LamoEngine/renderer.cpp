@@ -76,6 +76,9 @@ int Renderer::init()
 
 void Renderer::renderScene(Scene* scene)
 {
+	// Clear the screen
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	scene->camera()->computeMatricesFromInputs(window());
 	_viewMatrix = scene->camera()->getViewMatrix();
 
@@ -83,6 +86,10 @@ void Renderer::renderScene(Scene* scene)
 	{
 		renderEntity(scene->getChildren()[i]);
 	}
+
+	// Swap buffers
+	glfwSwapBuffers(window());
+	glfwPollEvents();
 }
 
 void Renderer::renderEntity(Entity* entity)

@@ -19,14 +19,11 @@ int main( void )
 
 	Scene* scene = new Scene();
 
-	float rot_z = 0.0f;
+	//float rot_z = 0.0f;
 
 	while (glfwGetKey(renderer.window(), GLFW_KEY_ESCAPE) != GLFW_PRESS &&	// Check if the ESC key was pressed or the window was closed
 			glfwWindowShouldClose(renderer.window()) == 0)
 	{
-
-		// Clear the screen
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		renderer.renderScene(scene);
 		
@@ -37,11 +34,7 @@ int main( void )
 		renderer.renderSprite(pencils, 900, 400, 1.0f, 1.0f, 0.0f);
 		//renderer.renderSprite(kingkong, 900, 400, 1.0f, 1.0f, 0.0f);
 		//renderer.renderSprite(rgba, renderer.width()/2, renderer.height()/2, 3.0f, 3.0f, rot_z);
-		rot_z += 0.03f;
-
-		// Swap buffers
-		glfwSwapBuffers(renderer.window());
-		glfwPollEvents();
+		//rot_z += 0.03f;
 	} 
 	
 
