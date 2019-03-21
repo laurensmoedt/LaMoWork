@@ -69,6 +69,8 @@ add_library(LamoEngine
 	LamoEngine/entity.cpp
 	LamoEngine/scene.h
 	LamoEngine/scene.cpp
+	LamoEngine/core.h
+	LamoEngine/core.cpp
 )
 
 # Demo
