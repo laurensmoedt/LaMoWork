@@ -9,24 +9,21 @@
 #include <LamoEngine/sprite.h>
 #include <LamoEngine/entity.h>
 #include <LamoEngine/scene.h>
+#include <LamoEngine/core.h>
 
 int main( void )
 {
-	Renderer renderer(1280, 720);
-
+	Renderer* renderer = new Renderer(1280, 720);
+	Core* core = new Core();
 	Scene* scene = new Scene();
 
-	while (glfwGetKey(renderer.window(), GLFW_KEY_ESCAPE) != GLFW_PRESS &&	// Check if the ESC key was pressed or the window was closed
-			glfwWindowShouldClose(renderer.window()) == 0)
+	while (scene->active())
 	{
-
-		renderer.renderScene(scene);
-		
-		//glm::vec3 cursor = getCursor(); // from Camera
-		//printf("(%f,%f)\n",cursor.x, cursor.y);
+		core->activate(scene, renderer);
 	} 
+	delete scene;
 	
-	// Close OpenGL window and terminate GLFW
+	//terminate GLFW
 	glfwTerminate();
 
 	return 0;
