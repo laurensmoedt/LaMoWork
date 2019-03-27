@@ -27,10 +27,6 @@ private:
 
 	Camera* _camera;
 
-	Entity* pencils;
-	Entity* kingkong;
-	Entity* rgba;
-
 };
 
 #endif /* SCENE_H */

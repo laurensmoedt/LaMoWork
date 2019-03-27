@@ -9,7 +9,6 @@
 
 #include <LamoEngine/renderer.h>
 #include <LamoEngine/scene.h>
-#include <LamoEngine/entity.h>
 
 class Core
 {

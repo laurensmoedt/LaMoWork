@@ -76,6 +76,8 @@ add_library(LamoEngine
 # Demo
 add_executable(demo
 	demo/main.cpp
+	demo/newScene.h
+	demo/newScene.cpp
 )
 target_link_libraries(demo
 	LamoEngine

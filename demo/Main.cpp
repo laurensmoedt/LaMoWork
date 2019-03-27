@@ -7,21 +7,21 @@
 #include <LamoEngine/renderer.h>
 #include <LamoEngine/camera.h>
 #include <LamoEngine/sprite.h>
-#include <LamoEngine/entity.h>
 #include <LamoEngine/scene.h>
 #include <LamoEngine/core.h>
+#include "newScene.h"
 
 int main( void )
 {
 	Renderer* renderer = new Renderer(1280, 720);
 	Core* core = new Core();
-	Scene* scene = new Scene();
+	NewScene* newScene = new NewScene();
 
-	while (scene->active())
+	while (newScene->active())
 	{
-		core->activate(scene, renderer);
+		core->activate(newScene, renderer);
 	} 
-	delete scene;
+	delete newScene;
 	
 	//terminate GLFW
 	glfwTerminate();
