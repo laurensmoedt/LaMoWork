@@ -10,7 +10,7 @@
 #include <glm/gtx/matrix_decompose.hpp>
 
 #include <LamoEngine/sprite.h>
-
+#include <LamoEngine/input.h>
 
 
 class Entity
