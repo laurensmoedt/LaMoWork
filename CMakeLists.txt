@@ -71,6 +71,8 @@ add_library(LamoEngine
 	LamoEngine/scene.cpp
 	LamoEngine/core.h
 	LamoEngine/core.cpp
+	LamoEngine/input.h
+	LamoEngine/input.cpp
 )
 
 # Demo
