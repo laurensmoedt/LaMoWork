@@ -15,5 +15,5 @@ private:
 	Entity* kingkong;
 	Entity* rgba;
 };
-#endif /* NEWSCENE_H */
+#endif
 

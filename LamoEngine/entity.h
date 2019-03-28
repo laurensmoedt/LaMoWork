@@ -56,4 +56,4 @@ private:
 		}
 	};
 };
-#endif /* ENTITY_H */
+#endif 

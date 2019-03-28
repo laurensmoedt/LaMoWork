@@ -21,5 +21,5 @@ public:
 private:
 
 };
-#endif /* CORE_H */
+#endif
 
