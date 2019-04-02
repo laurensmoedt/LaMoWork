@@ -1,20 +1,20 @@
+#include <iostream>
 #include "input.h"
 
 
 
 Input::Input()
 {
+	bool _buttonPressed = false;
+	bool _keyPressed = false;
+
 	_window = nullptr;
 }
 
-
-Input::~Input()
+void Input::updateInput(GLFWwindow* window)
 {
-
-}
-
-void Input::update(GLFWwindow* window) 
-{
+	
+	glfwGetKey(_window, GLFW_KEY_E);
 	_window = window;
 	glfwPollEvents();
 

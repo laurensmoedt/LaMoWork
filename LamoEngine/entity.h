@@ -28,17 +28,17 @@ public:
 
 	Entity* _parent;
 	std::vector<Entity*> _children;
-
 	Entity* parent() { return _parent; };
-
-	Sprite* sprite() { return _sprite; };
-	void addSprite(const std::string& imagepath);
-
 
 	void addChild(Entity* child);
 	void removeChild(Entity* child);
 
+	Sprite* sprite() { return _sprite; };
+	void addSprite(const std::string& imagepath);
+
 	const std::vector<Entity*>& getChildren() { return _children; };
+
+	Input* input() { return _input; };
 
 	int guid() { return _guid; };
 
@@ -47,7 +47,7 @@ private:
 	int _guid;
 	static int _nextGuid;
 
-	
+	Input* _input;
 
 	void removeSprite() {
 		if (_sprite != nullptr) {
