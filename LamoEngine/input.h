@@ -128,7 +128,7 @@ enum KeyCode
 	RightAlt = 346,
 	RightSuper = 347,
 	Menu = 348,
-	Last = GLFW_KEY_LAST
+	LastKey = GLFW_KEY_LAST
 };
 
 
@@ -147,11 +147,11 @@ public:
 
 private:
 
-	bool _keys[GLFW_KEY_LAST];
-
-	bool _buttonPressed;
-
 	GLFWwindow* _window;
+	void handleKey(unsigned int key);
+
+	bool _keys[LastKey];
+	bool _buttonPressed;
 
 	double _mouseX;
 	double _mouseY;
