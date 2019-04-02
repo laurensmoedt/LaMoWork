@@ -9,6 +9,10 @@ Input::Input()
 	bool _keyPressed = false;
 
 	_window = nullptr;
+
+	for (unsigned int i = 0; i < GLFW_KEY_LAST; i++) {
+		_keys[i] = false;
+	}
 }
 
 void Input::updateInput(GLFWwindow* window)

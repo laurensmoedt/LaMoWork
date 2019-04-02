@@ -127,7 +127,8 @@ enum KeyCode
 	RightControl = 345,
 	RightAlt = 346,
 	RightSuper = 347,
-	Menu = 348
+	Menu = 348,
+	Last = GLFW_KEY_LAST
 };
 
 
@@ -141,9 +142,13 @@ public:
 	double getMouseX() { return _mouseX; }
 	double getMouseY() { return _mouseY; }
 
+	bool keyPressed(KeyCode keycode) { return _keys[(unsigned int)keycode]; }
+
+
 private:
 
-	bool _keyPressed;
+	bool _keys[GLFW_KEY_LAST];
+
 	bool _buttonPressed;
 
 	GLFWwindow* _window;
