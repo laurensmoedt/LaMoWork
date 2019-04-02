@@ -137,7 +137,7 @@ class Input
 public:
 	Input();
 
-	void updateInput(GLFWwindow* window);
+	void updateInput(GLFWwindow* win);
 
 	double getMouseX() { return _mouseX; }
 	double getMouseY() { return _mouseY; }
@@ -148,7 +148,7 @@ public:
 private:
 
 	GLFWwindow* _window;
-	void handleKey(unsigned int key);
+	void _handleKey(unsigned int key);
 
 	bool _keys[LastKey];
 	bool _buttonPressed;

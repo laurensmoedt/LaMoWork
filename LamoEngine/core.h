@@ -20,7 +20,7 @@ public:
 	void activate(Scene* scene, Renderer* renderer);
 
 private:
-
+	Input* input;
 };
 #endif
 
