@@ -135,10 +135,11 @@ enum KeyCode
 class Input
 {
 public:
+	static Input* getInstance();
 	Input();
 
-	void updateInput(GLFWwindow* win);
-
+	void updateInput();
+	void init(GLFWwindow* window);
 	double getMouseX() { return _mouseX; }
 	double getMouseY() { return _mouseY; }
 
@@ -146,12 +147,12 @@ public:
 
 
 private:
-
+	static Input* instance;
 	GLFWwindow* _window;
-	void _handleKey(unsigned int key);
+	void handleKey(unsigned int key);
 
 	bool _keys[LastKey];
-	bool _buttonPressed;
+	bool _keysDown[LastKey];
 
 	double _mouseX;
 	double _mouseY;
