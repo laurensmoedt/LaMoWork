@@ -25,6 +25,7 @@ Input::Input()
 void Input::init(GLFWwindow* window)
 {
 	Input::getInstance()->_window = window;
+	updateInput();
 }
 
 void Input::updateInput()
