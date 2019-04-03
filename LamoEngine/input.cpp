@@ -14,8 +14,6 @@ Input* Input::getInstance() {
 
 Input::Input()
 {
-	bool _buttonPressed = false;
-
 	_window = nullptr;
 
 	for (unsigned int i = 0; i < LastKey; i++) {
@@ -41,8 +39,12 @@ void Input::handleKey(unsigned int key)
 {
 	if (glfwGetKey(_window, key) == GLFW_PRESS) {
 		if (_keys[key] == false) {
-			_keys[key] = true;
+			Input::getInstance()->_keys[key] = true;
 			std::cout << "Pressed: " << key << std::endl;
+		}
+		else if (glfwGetKey(_window, key) == GLFW_RELEASE) {
+			Input::getInstance()->_keys[key] = false;
+			std::cout << "released: " << key << std::endl;
 		}
 	}
 }
