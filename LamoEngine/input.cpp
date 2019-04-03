@@ -35,6 +35,11 @@ void Input::updateInput()
 	}
 }
 
+bool Input::getKey(int keycode)
+{
+	return Input::getInstance()->_keys[keycode];
+}
+
 void Input::handleKey(unsigned int key) 
 {
 	if (glfwGetKey(_window, key) == GLFW_PRESS) {

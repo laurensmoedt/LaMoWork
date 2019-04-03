@@ -144,7 +144,7 @@ public:
 	double getMouseY() { return _mouseY; }
 
 	bool keyPressed(KeyCode keycode) { return _keys[(unsigned int)keycode]; }
-
+	bool getKey(int keycode);
 
 private:
 	static Input* instance;
