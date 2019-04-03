@@ -143,12 +143,13 @@ public:
 	double getMouseX() { return _mouseX; }
 	double getMouseY() { return _mouseY; }
 
-	bool keyPressed(KeyCode keycode) { return _keys[(unsigned int)keycode]; }
 	bool getKey(int keycode);
+	bool getKeyDown(int keycode);
 
 private:
 	static Input* instance;
 	GLFWwindow* _window;
+
 	void handleKey(unsigned int key);
 
 	bool _keys[LastKey];

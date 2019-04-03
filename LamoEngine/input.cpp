@@ -18,6 +18,7 @@ Input::Input()
 
 	for (unsigned int i = 0; i < LastKey; i++) {
 		_keys[i] = false;
+		_keysDown[i] = false;
 	}
 }
 
@@ -38,6 +39,20 @@ void Input::updateInput()
 bool Input::getKey(int keycode)
 {
 	return Input::getInstance()->_keys[keycode];
+}
+
+bool Input::getKeyDown(int keycode)
+{
+	if (Input::getInstance()->_keys[keycode] && !Input::getInstance()->_keysDown[keycode]) 
+	{
+		Input::getInstance()->_keysDown[keycode] = true;
+		return true;
+	}
+	else if (!Input::getInstance()->_keys[keycode] && Input::getInstance()->_keysDown[keycode])
+	{
+		Input::getInstance()->_keysDown[keycode] = false;
+	}
+	return false;
 }
 
 void Input::handleKey(unsigned int key) 
