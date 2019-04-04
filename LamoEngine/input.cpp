@@ -84,14 +84,26 @@ bool Input::getButton(int keycode)
 	return Input::getInstance()->_buttons[keycode];
 }
 
+bool Input::getButtonDown(int keycode)
+{
+	if (Input::getInstance()->_buttons[keycode] && !Input::getInstance()->_buttonsDown[keycode]) {
+		Input::getInstance()->_buttonsDown[keycode] = true;
+		return true;
+	}
+	else if (!Input::getInstance()->_buttons[keycode] && Input::getInstance()->_buttonsDown[keycode]) {
+		Input::getInstance()->_buttonsDown[keycode] = false;
+	}
+	return false;
+}
+
 void Input::handleMouse(unsigned int button) 
 {
-	if (glfwGetKey(_window, button) == GLFW_PRESS) {
+	if (glfwGetMouseButton(_window, button) == GLFW_PRESS) {
 		if (_buttons[button] == false) {
 			Input::getInstance()->_keys[button] = true;
 			std::cout << "button Pressed: " << button << std::endl;
 		}
-		else if (glfwGetKey(_window, button) == GLFW_RELEASE) {
+		else if (glfwGetMouseButton(_window, button) == GLFW_RELEASE) {
 			Input::getInstance()->_buttons[button] = false;
 			std::cout << "button released: " << button << std::endl;
 		}
