@@ -1,5 +1,7 @@
 /*
- * LamoEngine 2D OpenGL framework.
+ * part of LamoEngine, a 2D OpenGL framework.
+ *
+ * Copyright 2019 Laurens Moedt <laurensmoedt.nl>
  *
  */
 

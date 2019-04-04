@@ -8,8 +8,20 @@
 
 #include <glfw3.h>
 
+
 enum KeyCode
 {
+	Mouse1 = GLFW_MOUSE_BUTTON_1,
+	Mouse2 = GLFW_MOUSE_BUTTON_2,
+	Mouse3 = GLFW_MOUSE_BUTTON_3,
+	Mouse4 = GLFW_MOUSE_BUTTON_4,
+	Mouse5 = GLFW_MOUSE_BUTTON_5,
+	Mouse6 = GLFW_MOUSE_BUTTON_6,
+	MouseLeft = GLFW_MOUSE_BUTTON_LEFT,
+	MouseRight = GLFW_MOUSE_BUTTON_RIGHT,
+	MouseMiddle = GLFW_MOUSE_BUTTON_MIDDLE,
+	LastMouse = GLFW_MOUSE_BUTTON_LAST,
+
 	Space = 32,
 	Apostrophe = 39,
 	Comma = 44,
@@ -138,6 +150,7 @@ public:
 	static Input* getInstance();
 	Input();
 
+	//updates the input from keyboard
 	void updateInput();
 	void init(GLFWwindow* window);
 	double getMouseX() { return _mouseX; }
@@ -151,9 +164,13 @@ private:
 	GLFWwindow* _window;
 
 	void handleKey(unsigned int key);
+	void handlemouse(unsigned int button);
 
 	bool _keys[LastKey];
 	bool _keysDown[LastKey];
+
+	bool _buttons[LastMouse];
+	bool _buttonsDown[LastMouse];
 
 	double _mouseX;
 	double _mouseY;
