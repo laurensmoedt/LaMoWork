@@ -25,6 +25,7 @@ Input::Input()
 	{
 		_buttons[i] = false;
 		_buttonsDown[i] = false;
+		_buttonsUp[i] = false;
 	}
 }
 
@@ -42,7 +43,7 @@ void Input::updateInput()
 	{
 		handleKey(i);
 	}
-	for (unsigned int i = 0; i < 9; i++)
+	for (unsigned int i = 0; i < LastButton; i++)
 	{
 		handleMouse(i);
 	}
@@ -100,7 +101,8 @@ void Input::handleMouse(unsigned int button)
 {
 	if (glfwGetMouseButton(_window, button) == GLFW_PRESS) {
 		if (_buttons[button] == false) {
-			Input::getInstance()->_keys[button] = true;
+			Input::getInstance()->_buttons[button] = true;
+			glfwSetInputMode(_window, GLFW_STICKY_MOUSE_BUTTONS, 1);
 			std::cout << "button Pressed: " << button << std::endl;
 		}
 		else if (glfwGetMouseButton(_window, button) == GLFW_RELEASE) {

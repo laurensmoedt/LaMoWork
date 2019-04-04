@@ -17,6 +17,9 @@ enum KeyCode
 	Button4 = GLFW_MOUSE_BUTTON_4,
 	Button5 = GLFW_MOUSE_BUTTON_5,
 	Button6 = GLFW_MOUSE_BUTTON_6,
+	Button7 = GLFW_MOUSE_BUTTON_7,
+	Button8 = GLFW_MOUSE_BUTTON_8,
+
 	ButtonLeft = GLFW_MOUSE_BUTTON_LEFT,
 	ButtonRight = GLFW_MOUSE_BUTTON_RIGHT,
 	ButtonMiddle = GLFW_MOUSE_BUTTON_MIDDLE,
@@ -174,6 +177,8 @@ private:
 
 	bool _buttons[LastButton];
 	bool _buttonsDown[LastButton];
+	bool _buttonsUp[LastButton];
+
 
 	double _mouseX;
 	double _mouseY;
