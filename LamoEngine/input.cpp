@@ -55,13 +55,11 @@ bool Input::getKey(int keycode)
 
 bool Input::getKeyDown(int keycode)
 {
-	if (Input::getInstance()->_keys[keycode] && !Input::getInstance()->_keysDown[keycode]) 
-	{
+	if (Input::getInstance()->_keys[keycode] && !Input::getInstance()->_keysDown[keycode]) {
 		Input::getInstance()->_keysDown[keycode] = true;
 		return true;
 	}
-	else if (!Input::getInstance()->_keys[keycode] && Input::getInstance()->_keysDown[keycode])
-	{
+	else if (!Input::getInstance()->_keys[keycode] && Input::getInstance()->_keysDown[keycode]){
 		Input::getInstance()->_keysDown[keycode] = false;
 	}
 	return false;
@@ -79,6 +77,11 @@ void Input::handleKey(unsigned int key)
 			std::cout << "key released: " << key << std::endl;
 		}
 	}
+}
+
+bool Input::getButton(int keycode)
+{
+	return Input::getInstance()->_buttons[keycode];
 }
 
 void Input::handleMouse(unsigned int button) 
