@@ -20,6 +20,12 @@ Input::Input()
 		_keys[i] = false;
 		_keysDown[i] = false;
 	}
+
+	for (unsigned int i = 0; i < LastButton; i++)
+	{
+		_buttons[i] = false;
+		_buttonsDown[i] = false;
+	}
 }
 
 void Input::init(GLFWwindow* window)
@@ -32,8 +38,13 @@ void Input::updateInput()
 {
 	glfwPollEvents();
 
-	for (unsigned int i = 32; i < LastKey; i++) {
+	for (unsigned int i = 32; i < LastKey; i++) 
+	{
 		handleKey(i);
+	}
+	for (unsigned int i = 0; i < 9; i++)
+	{
+		handleMouse(i);
 	}
 }
 
@@ -61,11 +72,25 @@ void Input::handleKey(unsigned int key)
 	if (glfwGetKey(_window, key) == GLFW_PRESS) {
 		if (_keys[key] == false) {
 			Input::getInstance()->_keys[key] = true;
-			std::cout << "Pressed: " << key << std::endl;
+			std::cout << "key Pressed: " << key << std::endl;
 		}
 		else if (glfwGetKey(_window, key) == GLFW_RELEASE) {
 			Input::getInstance()->_keys[key] = false;
-			std::cout << "released: " << key << std::endl;
+			std::cout << "key released: " << key << std::endl;
+		}
+	}
+}
+
+void Input::handleMouse(unsigned int button) 
+{
+	if (glfwGetKey(_window, button) == GLFW_PRESS) {
+		if (_buttons[button] == false) {
+			Input::getInstance()->_keys[button] = true;
+			std::cout << "button Pressed: " << button << std::endl;
+		}
+		else if (glfwGetKey(_window, button) == GLFW_RELEASE) {
+			Input::getInstance()->_buttons[button] = false;
+			std::cout << "button released: " << button << std::endl;
 		}
 	}
 }

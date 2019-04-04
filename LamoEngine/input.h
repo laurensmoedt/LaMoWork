@@ -11,16 +11,16 @@
 
 enum KeyCode
 {
-	Mouse1 = GLFW_MOUSE_BUTTON_1,
-	Mouse2 = GLFW_MOUSE_BUTTON_2,
-	Mouse3 = GLFW_MOUSE_BUTTON_3,
-	Mouse4 = GLFW_MOUSE_BUTTON_4,
-	Mouse5 = GLFW_MOUSE_BUTTON_5,
-	Mouse6 = GLFW_MOUSE_BUTTON_6,
-	MouseLeft = GLFW_MOUSE_BUTTON_LEFT,
-	MouseRight = GLFW_MOUSE_BUTTON_RIGHT,
-	MouseMiddle = GLFW_MOUSE_BUTTON_MIDDLE,
-	LastMouse = GLFW_MOUSE_BUTTON_LAST,
+	Button1 = GLFW_MOUSE_BUTTON_1,
+	Button1 = GLFW_MOUSE_BUTTON_2,
+	Button1 = GLFW_MOUSE_BUTTON_3,
+	Button1 = GLFW_MOUSE_BUTTON_4,
+	Button1 = GLFW_MOUSE_BUTTON_5,
+	Button1 = GLFW_MOUSE_BUTTON_6,
+	ButtonLeft = GLFW_MOUSE_BUTTON_LEFT,
+	ButtonRight = GLFW_MOUSE_BUTTON_RIGHT,
+	ButtonMiddle = GLFW_MOUSE_BUTTON_MIDDLE,
+	LastButton = GLFW_MOUSE_BUTTON_LAST,
 
 	Space = 32,
 	Apostrophe = 39,
@@ -159,18 +159,21 @@ public:
 	bool getKey(int keycode);
 	bool getKeyDown(int keycode);
 
+	bool getButton(int keycode);
+	bool getButtonDown(int keycode);
+
 private:
 	static Input* instance;
 	GLFWwindow* _window;
 
 	void handleKey(unsigned int key);
-	void handlemouse(unsigned int button);
+	void handleMouse(unsigned int button);
 
 	bool _keys[LastKey];
 	bool _keysDown[LastKey];
 
-	bool _buttons[LastMouse];
-	bool _buttonsDown[LastMouse];
+	bool _buttons[LastButton];
+	bool _buttonsDown[LastButton];
 
 	double _mouseX;
 	double _mouseY;
