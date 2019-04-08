@@ -8,6 +8,10 @@
 
 #include <glfw3.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 
 enum KeyCode
 {
@@ -171,6 +175,7 @@ private:
 
 	void handleKey(unsigned int key);
 	void handleMouse(unsigned int button);
+	//GLFWscrollfun scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 
 	bool _keys[LastKey];
 	bool _keysDown[LastKey];

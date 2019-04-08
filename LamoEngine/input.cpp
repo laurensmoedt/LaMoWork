@@ -14,6 +14,7 @@ Input* Input::getInstance() {
 
 Input::Input()
 {
+	
 	_window = nullptr;
 
 	for (unsigned int i = 0; i < LastKey; i++) {
@@ -33,6 +34,7 @@ void Input::init(GLFWwindow* window)
 {
 	Input::getInstance()->_window = window;
 	updateInput();
+	//glfwSetScrollCallback(window, scrollCallback(window, 60, 60));
 }
 
 void Input::updateInput()
@@ -111,3 +113,15 @@ void Input::handleMouse(unsigned int button)
 		}
 	}
 }
+/*
+GLFWscrollfun scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	float fov = 60.0f;
+	if (fov >= 1.0f && fov <= 60.0f)
+		fov -= yoffset;
+	if (fov <= 1.0f)
+		fov = 1.0f;
+	if (fov >= 60.0f)
+		fov = 60.0f;
+}
+*/
