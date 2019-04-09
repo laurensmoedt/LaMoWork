@@ -75,6 +75,8 @@ add_library(LamoEngine
 	LamoEngine/input.cpp
 	LamoEngine/resourcemanager.h
 	LamoEngine/resourcemanager.cpp
+	LamoEngine/texture.h
+	LamoEngine/texture.cpp
 )
 
 # Demo

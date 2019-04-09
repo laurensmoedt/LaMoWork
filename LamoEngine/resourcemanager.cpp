@@ -2,13 +2,13 @@
 
 
 
-resourcemanager::resourcemanager()
+Resourcemanager::Resourcemanager()
 {
 
 }
 
 
-resourcemanager::~resourcemanager()
+Resourcemanager::~Resourcemanager()
 {
 
 }

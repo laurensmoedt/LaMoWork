@@ -157,7 +157,7 @@ public:
 	static Input* getInstance();
 	Input();
 
-	//updates the input from keyboard
+	//updates the input from input device
 	void updateInput();
 	void init(GLFWwindow* window);
 	double getMouseX() { return _mouseX; }

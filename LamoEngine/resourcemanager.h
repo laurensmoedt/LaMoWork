@@ -1,8 +1,20 @@
-#pragma once
-class resourcemanager
+#ifndef	RESOURCEMANAGER_H
+#define RESOURCEMANAGER_H
+
+#include <iostream>
+#include <string>
+
+#include <GL/glew.h>
+
+#include <glfw3.h>
+
+class Resourcemanager
 {
 public:
-	resourcemanager();
-	virtual ~resourcemanager();
-};
+	Resourcemanager();
+	virtual ~Resourcemanager();
 
+private:
+
+};
+#endif
