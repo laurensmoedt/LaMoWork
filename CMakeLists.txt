@@ -73,6 +73,8 @@ add_library(LamoEngine
 	LamoEngine/core.cpp
 	LamoEngine/input.h
 	LamoEngine/input.cpp
+	LamoEngine/resourcemanager.h
+	LamoEngine/resourcemanager.cpp
 )
 
 # Demo
