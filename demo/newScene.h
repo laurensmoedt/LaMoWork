@@ -1,8 +1,8 @@
 #ifndef NEWSCENE_H
 #define NEWSCENE_H
 
-#include <LamoEngine/scene.h>
-#include <LamoEngine/entity.h>
+#include <LamoEngine/Renderer/scene.h>
+#include <LamoEngine/Renderer/entity.h>
 
 class NewScene : public Scene
 {

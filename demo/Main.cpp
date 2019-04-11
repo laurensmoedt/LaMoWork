@@ -4,11 +4,11 @@
 // Include GLFW
 #include <glfw3.h>
 
-#include <LamoEngine/renderer.h>
-#include <LamoEngine/camera.h>
-#include <LamoEngine/sprite.h>
-#include <LamoEngine/scene.h>
-#include <LamoEngine/core.h>
+#include <LamoEngine/Renderer/renderer.h>
+#include <LamoEngine/Renderer/camera.h>
+#include <LamoEngine/Sprite/sprite.h>
+#include <LamoEngine/Renderer/scene.h>
+#include <LamoEngine/Core/core.h>
 #include "newScene.h"
 
 int main( void )

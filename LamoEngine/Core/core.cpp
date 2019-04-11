@@ -1,6 +1,6 @@
-#include "core.h"
 #include <cstdlib>
 
+#include "core.h"
 
 Core::Core()
 {

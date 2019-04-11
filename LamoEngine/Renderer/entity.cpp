@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include <LamoEngine/entity.h>
+#include "entity.h"
 
 
 int Entity::_nextGuid = 0;

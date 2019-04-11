@@ -5,7 +5,7 @@
  *
  */
 
-#include <LamoEngine/camera.h>
+#include <LamoEngine/Renderer/camera.h>
 
 Camera:: Camera() : Entity()
 {

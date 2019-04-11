@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <string>
 
-#include <LamoEngine/renderer.h>
-#include <LamoEngine/scene.h>
-#include <LamoEngine/input.h>
+#include <LamoEngine/Renderer/renderer.h>
+#include <LamoEngine/Renderer/scene.h>
+#include <LamoEngine/Core/input.h>
 
 class Core
 {

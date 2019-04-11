@@ -9,8 +9,8 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_decompose.hpp>
 
-#include <LamoEngine/sprite.h>
-#include <LamoEngine/input.h>
+#include <LamoEngine/Sprite/sprite.h>
+#include <LamoEngine/Core/input.h>
 
 
 class Entity

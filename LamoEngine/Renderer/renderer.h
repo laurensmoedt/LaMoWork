@@ -8,10 +8,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/euler_angles.hpp>
 
-#include <LamoEngine/camera.h>
-#include <LamoEngine/sprite.h>
-#include <LamoEngine/entity.h>
-#include <LamoEngine/scene.h>
+#include <LamoEngine/Renderer/camera.h>
+#include <LamoEngine/Sprite/sprite.h>
+#include <LamoEngine/Renderer/entity.h>
+#include <LamoEngine/Renderer/scene.h>
 
 class Renderer
 {

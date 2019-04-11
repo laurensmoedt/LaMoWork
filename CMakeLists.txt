@@ -59,26 +59,26 @@ add_definitions(
 
 # LamoEngine (libLamoEngine.a)
 add_library(LamoEngine
-	LamoEngine/camera.h
-	LamoEngine/camera.cpp
-	LamoEngine/renderer.h
-	LamoEngine/renderer.cpp
-	LamoEngine/sprite.h
-	LamoEngine/sprite.cpp
-	LamoEngine/entity.h
-	LamoEngine/entity.cpp
-	LamoEngine/scene.h
-	LamoEngine/scene.cpp
-	LamoEngine/core.h
-	LamoEngine/core.cpp
-	LamoEngine/input.h
-	LamoEngine/input.cpp
-	LamoEngine/resourcemanager.h
-	LamoEngine/resourcemanager.cpp
-	LamoEngine/texture.h
-	LamoEngine/texture.cpp
-	LamoEngine/scenemanager.h
-	LamoEngine/scenemanager.cpp
+	LamoEngine/Renderer/camera.h
+	LamoEngine/Renderer/camera.cpp
+	LamoEngine/Renderer/renderer.h
+	LamoEngine/Renderer/renderer.cpp
+	LamoEngine/Renderer/entity.h
+	LamoEngine/Renderer/entity.cpp
+	LamoEngine/Renderer/scene.h
+	LamoEngine/Renderer/scene.cpp
+	LamoEngine/Renderer/resourcemanager.h
+	LamoEngine/Renderer/resourcemanager.cpp
+	LamoEngine/Sprite/sprite.h
+	LamoEngine/Sprite/sprite.cpp
+	LamoEngine/Core/core.h
+	LamoEngine/Core/core.cpp
+	LamoEngine/Core/input.h
+	LamoEngine/Core/input.cpp
+	LamoEngine/Core/scenemanager.h
+	LamoEngine/Core/scenemanager.cpp
+	LamoEngine/Textures/texture.h
+	LamoEngine/Textures/texture.cpp
 )
 
 # Demo

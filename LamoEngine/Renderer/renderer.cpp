@@ -5,7 +5,7 @@
 #include <fstream>
 
 
-#include <LamoEngine/renderer.h>
+#include "renderer.h"
 
 Renderer::Renderer(unsigned int w, unsigned int h)
 {

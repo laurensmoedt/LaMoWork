@@ -8,8 +8,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/euler_angles.hpp>
 
-#include <LamoEngine/sprite.h>
-#include <LamoEngine/entity.h>
+#include <LamoEngine/Sprite/sprite.h>
+#include <LamoEngine/Renderer/entity.h>
 
 class Camera : public Entity
 {

@@ -4,9 +4,11 @@
 
 scenemanager::scenemanager()
 {
+
 }
 
 
 scenemanager::~scenemanager()
 {
+
 }

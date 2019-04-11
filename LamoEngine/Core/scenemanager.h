@@ -4,5 +4,7 @@ class scenemanager
 public:
 	scenemanager();
 	virtual ~scenemanager();
+private:
+
 };
 
