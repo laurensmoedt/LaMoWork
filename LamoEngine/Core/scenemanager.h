@@ -1,10 +1,20 @@
-#pragma once
-class scenemanager
+#ifndef SCENEMANAGER_H
+#define SCENEMANAGER_H
+
+#include <LaMoEngine/Renderer/scene.h>
+#include <LaMoEngine/Renderer/renderer.h>
+
+class Scenemanager
 {
 public:
-	scenemanager();
-	virtual ~scenemanager();
+	Scenemanager();
+	virtual ~Scenemanager();
+
+	void loadScene(Scene* scene);
+	void clearScene();
 private:
+	Renderer* renderer;
 
 };
+#endif 
 

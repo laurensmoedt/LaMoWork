@@ -10,6 +10,7 @@
 #include <LamoEngine/Renderer/renderer.h>
 #include <LamoEngine/Renderer/scene.h>
 #include <LamoEngine/Core/input.h>
+#include <LamoEngine/Core/scenemanager.h>
 
 class Core
 {
@@ -21,6 +22,7 @@ public:
 
 private:
 	Input* input;
+	
 };
 #endif
 

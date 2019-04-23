@@ -76,6 +76,7 @@ int Renderer::init()
 
 void Renderer::renderScene(Scene* scene)
 {
+	glfwSwapBuffers(window());
 	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -87,8 +88,8 @@ void Renderer::renderScene(Scene* scene)
 		renderEntity(scene->getChildren()[i]);
 	}
 
-	// Swap buffers
-	glfwSwapBuffers(window());
+	
+	
 	glfwPollEvents();
 }
 
