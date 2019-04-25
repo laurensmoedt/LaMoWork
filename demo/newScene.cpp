@@ -1,5 +1,7 @@
 #include "newScene.h"
-
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/euler_angles.hpp>
 
 
 NewScene::NewScene() : Scene()
@@ -11,6 +13,7 @@ NewScene::NewScene() : Scene()
 	kingkong = new Entity();
 	kingkong->addSprite("assets/kingkong.tga");
 	this->addChild(kingkong);
+	kingkong->position = glm::vec3(200.0f, 200.0f, 0.0f);
 
 	rgba = new Entity();
 	rgba->addSprite("assets/rgba.tga");

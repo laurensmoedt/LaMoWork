@@ -1,9 +1,3 @@
-// Include GLEW
-#include <GL/glew.h>
-
-// Include GLFW
-#include <glfw3.h>
-
 #include <LamoEngine/Renderer/renderer.h>
 #include <LamoEngine/Renderer/camera.h>
 #include <LamoEngine/Sprite/sprite.h>
@@ -23,8 +17,6 @@ int main( void )
 	} 
 	delete newScene;
 	
-	//terminate GLFW
-	glfwTerminate();
 
 	return 0;
 }

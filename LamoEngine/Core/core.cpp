@@ -10,7 +10,8 @@ Core::Core()
 
 Core::~Core()
 {
-
+	//terminate GLFW
+	glfwTerminate();
 }
 
 void Core::activate(Scene* scene, Renderer* renderer) 
